@@ -2,7 +2,7 @@
 
 This folder consists of two Java programs conducted in the Lab MST:
 
-1. **Question 1 – HashMap**  
+1. **Question 2 – HashMap**  
    A program that uses a `HashMap` to
    store employee IDs and names,
    with methods to add employees,

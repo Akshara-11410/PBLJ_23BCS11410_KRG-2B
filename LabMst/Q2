@@ -1,9 +1,6 @@
 
 import java.util.*;
-/**
- *
- * @author DELL
- */
+
 class EmployeeNotFoundException extends Exception {
     public EmployeeNotFoundException(String message) {
         super(message);
@@ -29,9 +26,7 @@ class EmployeeDirectory {
 
 public class JavaApplication3 {
 
-    /**
-     * @param args the command line arguments
-     */
+  
     public static void main(String[] args) {
         EmployeeDirectory directory = new EmployeeDirectory();
 
@@ -48,3 +43,4 @@ public class JavaApplication3 {
     }
     
 }
+

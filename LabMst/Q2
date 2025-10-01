@@ -1,0 +1,50 @@
+
+import java.util.*;
+/**
+ *
+ * @author DELL
+ */
+class EmployeeNotFoundException extends Exception {
+    public EmployeeNotFoundException(String message) {
+        super(message);
+    }
+}
+
+class EmployeeDirectory {
+    private HashMap<Integer, String> employees = new HashMap<>();
+
+    public void addEmployee(int id, String name) {
+        employees.put(id, name);
+        System.out.println("Employee added: ID=" + id + ", Name=" + name);
+    }
+
+    public String getEmployeeName(int id) throws EmployeeNotFoundException {
+        if (employees.containsKey(id)) {
+            return employees.get(id);
+        } else {
+            throw new EmployeeNotFoundException("Employee with ID " + id + " not found.");
+        }
+    }
+}
+
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        EmployeeDirectory directory = new EmployeeDirectory();
+
+        directory.addEmployee(10, "Akshara");
+        directory.addEmployee(12, "Ishika");
+        directory.addEmployee(10, "Varun");
+
+        try {
+            System.out.println("Employee with ID 10: " + directory.getEmployeeName(10));
+            System.out.println("Employee with ID 200: " + directory.getEmployeeName(200));
+        } catch (EmployeeNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    
+}
